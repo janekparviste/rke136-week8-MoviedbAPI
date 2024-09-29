@@ -17,11 +17,12 @@ window.onload = () => {
             return response.json();
         })
         .then((data) => {
-            console.log(data)
             movieTitle.textContent = data.title;
             movieTitle2.textContent = data.title;
             let date = new Date(data.release_date);
-            releaseDate.textContent = `${date.getUTCDate()}/${date.getUTCMonth()+1}/${date.getUTCFullYear()} ${
+            releaseDate.textContent = `${date.getUTCDate()}/${
+                date.getUTCMonth() + 1
+            }/${date.getUTCFullYear()} ${
                 data.production_countries[0].iso_3166_1
             }`;
             movieDuration.textContent = `${data.runtime} minutes`;
