@@ -10,13 +10,14 @@ const footerYear = document.querySelector('.year');
 
 window.onload = () => {
     let url =
-        'https://api.themoviedb.org/3/movie/831815?api_key=66d9e7e01da7ecd4981ea9123b980bbf';
+        'https://api.themoviedb.org/3/movie/807339?api_key=66d9e7e01da7ecd4981ea9123b980bbf';
 
     fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
+            console.log(data)
             movieTitle.textContent = data.title;
             movieTitle2.textContent = data.title;
             let date = new Date(data.release_date);
